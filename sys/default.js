@@ -30,4 +30,5 @@ $('a, .ctf').on({mouseenter: function (e){$('#cur, #cur2').addClass('active');},
 
 $(window).bind('load', function(){
 	$('.loader').remove();
+	$('[theme-color]').attr('content','#EDBF81');
 });
