@@ -1,0 +1,80 @@
+/*Init*/
+@font-face {font-family: 'savage'; src: url('savage.ttf'); font-weight: 100 900;}
+
+/*Reset*/
+* {box-sizing: border-box; background: initial; margin: initial; padding: initial; border: initial;}
+
+/*Default*/
+html {scroll-behavior: smooth; font-family: 'savage', sans-serif; font-feature-settings: 'ss01';}
+body {overflow: hidden;}
+
+p, span, a, li, li a {font-size: 1rem; font-weight: 300; line-height: 1rem;}
+
+
+a, .ctf {color: #EDBF81; text-decoration: none; transition: 0.5s;}
+a:hover, .ctf:hover {font-weight: 600;}
+ul {list-style-type: none;}
+
+p, .headline, .address, img, video, .frame, .filter {pointer-events: none;}
+
+/* Loader */
+.loader {z-index: 1000; width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: #202020; color: white;}
+.loader > * {position: fixed;}
+.loader img {width: 8rem; height: 8rem;  left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.loader span {left: 50%; bottom: 20%; transform: translateX(-50%); letter-spacing: 0.75rem;}
+
+/* Header */
+header {position: fixed; top: 0; left: 0; z-index: 1; width: 100%; max-width: 100%; height: 100%; max-height: 100%; padding: 2rem; color: white;}
+
+.wordmark {position: fixed; top: 7.5rem; left: 50%; transform: translateX(-50%); height: 3rem;}
+
+.main {position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); width: calc(100% - 8rem);}
+.headline {display: block; font-size: 4rem; font-weight: 800; text-transform: uppercase; line-height: 4rem; margin-top: 1rem; margin-left: -0.5rem;}
+.ctf {display: inline-block; cursor: pointer; margin-top: 1rem; float: right;}
+.ctf::before {content: ''; display: inline-block; width: 8rem; height: 0.0625rem; background: #EDBF81; margin-right: 1rem; margin-bottom: 0.25rem; transition: 0.5s;}
+.ctf:hover::before {width: 4rem;}
+
+.social {position: fixed; top: 2rem; right: 2rem;}
+.social::before {content: 'подписывайся --------------------------------'; display: inline-block; position: absolute; width: 18.5rem; right: 0; pointer-events: none;}
+.social li {display: inline-block;}
+.social li:nth-of-type(1) {margin-right: 1.5rem;}
+.social a {display: inline-block; width: 1.5rem; height: 1.5rem;}
+.social li:nth-of-type(1) a {background: url('../media/svg/social/vk-white.svg');}
+.social li:nth-of-type(2) a {background: url('../media/svg/social/instagram-white.svg');}
+.social li:hover a {transform: rotate(360deg);}
+.social li:nth-of-type(1):hover a {background: url('../media/svg/social/vk.svg')}
+.social li:nth-of-type(2):hover a {background: url('../media/svg/social/instagram.svg')}
+
+.logo {position: fixed; bottom: 4rem; left: 50%; transform: translateX(-50%); height: 5rem;}
+
+.copyright {position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);}
+
+.frame {width: calc(100% - 2rem); height: calc(100% - 2rem); position: fixed; top: 1rem; left: 1rem; z-index: -1; background: rgba(0,0,0,0.25); border: 0.0625rem solid rgba(255,255,255,0.75);}
+
+header video {position: fixed; top: 50%; left: 50%; z-index: -2; transform: translate(-50%,-50%); object-fit: cover; width: 100%; height: 100%; filter: grayscale(100%);}
+
+#cur, #cur2 {position: fixed; z-index: 999; border-radius: 50%; pointer-events: none;}
+#cur {width: 1rem; height: 1rem; background: #EDBF81;}
+#cur2 {width: 4rem; height: 4rem; border: solid #EDBF81 0.0625rem; transition: 0.125s;}
+#cur.active {background: initial; border: solid #F0F0F0 0.125rem; width: 3rem; height: 3rem; margin-top: -1rem; margin-left: -1rem;}
+
+.slash {position: fixed; top: 2rem; left: 2rem; width: 6rem; height: 6rem; background: url('../media/svg/slash.svg');}
+.dots {position: fixed; bottom: 2rem; right: 2rem; width: 3.5rem; height: 8rem; background: url('../media/svg/dots.svg');}
+
+.contact {display: none; margin-top: 1rem; border-top: solid transparent 0.0625rem; border-bottom: solid transparent 0.0625rem; padding: 1rem; transition: 0.5s;}
+.contact p {opacity: 0; transition: 0.5s;}
+.via {margin-top: 1rem;}
+.via li {padding: 0.5rem 0; opacity: 0; transition: 0.5s;}
+
+/* Conditions */
+@media (orientation: landscape) {
+	.loader img {width: 12rem; height: 12rem;}
+	.main {width: initial; max-width: calc(100% - 4rem);}
+	.headline {font-size: 5rem; line-height: 5rem;}
+	p, span, li a {font-size: 1.25rem; line-height: 1.25rem;}
+	li {font-size: 1.125rem; line-height: 1.125rem;}
+	.wordmark {height: 4rem; top: 6.75rem;}
+	.logo {height: 6rem; bottom: 2rem;}
+	.copyright {bottom: 2rem; left: 2rem; transform: initial;}
+	.social::before {width: 22rem; top: -0.25rem; font-size: 1.25rem;}
+}
