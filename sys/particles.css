@@ -1,8 +1,8 @@
-.lvl1 {position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; overflow: hidden; pointer-events: none; font-size: 2em; mix-blend-mode: color-dodge;}
+.lvl1 {position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; overflow: hidden; pointer-events: none; font-size: 1.5em;}
 
-.lvl2 {position: absolute; transform: translatex(-10vh); animation-iteration-count: infinite !important; animation-timing-function: linear !important}
+.lvl2 {position: absolute; transform: translatex(-10vh); animation-iteration-count: infinite !important; animation-timing-function: ease-in-out !important;}
 
-.lvl2 .lvl3 {width: 75%; height: 100%; border-radius: 0%; background-image: radial-gradient(rgba(255,255,0,1) 6.25%, rgba(255,0,0,0.5) 18.75%, transparent 75%); animation: lvl1 2s ease-in-out infinite;}
+.lvl2 .lvl3 {width: 75%; height: 100%; border-radius: 0%; background-image: radial-gradient(rgba(255,192,0,1) 6.25%, rgba(255,64,0,0.5) 18.75%, transparent 75%); animation: lvl1 2s ease-in-out infinite;}
 @keyframes lvl1 {0% {transform: scale(1);} 50% {transform: scale(0.5);} 100% {transform: scale(1);}}
 
 .lvl2:nth-child(1) {width: 0.4375em; height: 0.4375em; animation: lvl2-1 9153ms 7846ms;}
