@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://savage.ps.ai/sitemap.xml
+Sitemap: https://savage.ps.ai/sitemaps.xml
