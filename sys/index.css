@@ -1,9 +1,9 @@
-@font-face {font-family: 'default'; src: url('savage.ttf'); font-weight: 0 1000;}
+@font-face {font-family: 'savage'; src: url('savage.ttf'); font-weight: 0 1000;}
 
 * {box-sizing: border-box; background: initial; margin: initial; padding: initial; border: initial; margin-block: initial; margin-inline: initial;}
 
 /*init*/
-html {scroll-behavior: smooth; overflow-x: hidden; color: #f0f0f0; text-align: center; font-family: 'default', sans-serif; font-feature-settings: 'lnum', 'ss01', 'dlig', 'liga', 'clig', 'kern';}
+html {scroll-behavior: smooth; overflow-x: hidden; color: #f0f0f0; text-align: center; font-family: 'savage', sans-serif; font-feature-settings: 'lnum', 'ss01', 'dlig', 'liga', 'clig', 'kern';}
 body {overflow-x: hidden; background: transparent url('../index/portrait.webp') no-repeat center bottom/cover fixed;}
 
 header, nav, section, article, footer {padding: 2rem;}
