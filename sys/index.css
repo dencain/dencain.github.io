@@ -1,71 +1,62 @@
-@font-face {font-family: 'savage'; src: url('savage.ttf'); font-weight: 0 1000;}
-
-* {box-sizing: border-box; background: initial; margin: initial; padding: initial; border: initial; margin-block: initial; margin-inline: initial;}
+* {box-sizing: border-box; background: initial; font-style: initial; color: initial; margin: initial; padding: initial; border: initial; margin-block: initial; margin-inline: initial;}
 
 /*init*/
-html {scroll-behavior: smooth; overflow-x: hidden; color: #f0f0f0; text-align: center; font-family: 'savage', sans-serif; font-feature-settings: 'lnum', 'ss01', 'dlig', 'liga', 'clig', 'kern';}
-body {overflow-x: hidden; background: transparent url('../index/portrait.webp') no-repeat center bottom/cover fixed;}
+html {scroll-behavior: smooth; overflow-x: hidden; font-family: 'Jost', sans-serif; font-feature-settings: 'lnum', 'ss01', 'dlig', 'liga', 'clig', 'kern'; color: #f0f0f0; text-align: center;}
 
-header, nav, section, article, footer {padding: 2rem;}
-address {font-style: initial;}
+body {background: #202020 url('../index/hd.webp') no-repeat center/contain fixed; cursor: crosshair;}
 
-h1, .meta {display: none;}
-h2 {font-size: 2rem;} h2 {font-size: 1.25rem;} h3 {font-size: 1rem;}
-h1, h2, h3 {letter-spacing: 0.125rem; margin-bottom: 2rem;}
-h1, h2, h3 {font-weight: 800; text-transform: uppercase;}
+header {animation: init 6s forwards;} footer {animation: init 6s 1.5s forwards;}
+header, footer {padding: 2rem; opacity: 0;}
+@keyframes init {0% {opacity: 0;} 100% {opacity: 1;}}
 
-p, a {font-size: 1.25rem; font-weight: 300;}
-p {line-height: 1.5rem;}
-a, a::before, a::after {text-decoration: none; transition: 0.5s;}
+header {margin-top: 16rem;}
+span {display: block; font-size: 4rem; line-height: 4.5rem; font-family: sans-serif; color: transparent; -webkit-text-stroke: 0.5px white; font-weight: 800; text-transform: uppercase;}
+
+p, a, li {font-size: 1.25rem; font-weight: 300;}
+p {margin-bottom: 2rem;}
+p:last-of-type {margin-bottom: initial;}
+
+a {text-decoration: none;} a, a::before, a::after {transition: 0.5s;}
+a[rel=external] {color: #f0cc90;}
+a[rel=external]:hover {font-weight: 600; letter-spacing: 0.0625rem;}
+a[rel=external]::after {display: inline-block; content: ''; width: 1rem; aspect-ratio: 1/1; background: url('svg/icon/external.svg'); position: relative; top: 0.0625rem; left: 0.5rem;}
+
 ul {list-style-type: none;}
-h1, h2, p, img {pointer-events: none;}
-strong {font-weight: 900;}
-mark {background: linear-gradient(0deg, #f0cc90 0.125rem, transparent 0.125rem); color: #f0f0f0;}
+mark {display: inline-block; height: 1.75rem; background: linear-gradient(0deg, #f0cc90 0.125rem, transparent 0.125rem); color: #f0f0f0;}
 
-header {margin-top: 2rem;}
-header img {width: 37.5%;}
-header p {display: grid; grid-template-columns: 1fr auto 1fr; grid-gap: 1rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5rem; margin-top: 3rem;}
-header p::before, header p::after {display: inline-block; content: ''; width: 100%; height: 0.0625rem; background: #f0f0f0; margin-top: auto; margin-bottom: auto;}
+footer {text-align: center; display: grid; grid: 'img ' 'contact' 'social' 'copyright'; grid-gap: 2rem;}
+footer > * {margin: auto !important;}
 
-nav {background: rgba(0,0,0,0.25); border-radius: 2rem; margin-top: 2rem;}
-nav li, #contact li {margin-bottom: 2rem;}
-nav li:last-of-type, #contact li:last-of-type  {margin-bottom: initial;}
-nav a, #contact a {position: relative; display: block; height: 3rem; line-height: 2.875rem; background: rgba(0,0,0,0.125); color: #f0cc90; border: #f0cc90 solid 0.0625rem; border-radius: 1.5rem;}
-nav a:hover, #contact a:hover {background: #f0cc90; color: #202020; border-color: transparent; font-weight: 600;}
+img {width: 8rem; pointer-events: none; margin-left: calc(50% - 4rem); margin-right: calc(50% - 4rem); grid-area: img; margin-bottom: 2rem !important;}
 
-#about {background: rgba(0,0,0,0.25); border-radius: 2rem; padding: 2rem; margin-top: 4rem;}
-#about h2 {margin-bottom: 1rem;}
-#about p {text-align: initial;}
-#about img {width: 75%; margin: 2rem 0;}
-#about p:last-of-type {margin: 1rem 0;}
-#about li:last-of-type {margin-top: 0.5rem;}
-#about a {display: block; color: #f0cc90;}
-#about a::after {content: ''; display: inline-block; position: relative; left: 0.5rem; top: 0.125rem; width: 1rem; aspect-ratio: 1/1; background: url('../sys/svg/icon/external.svg');}
-#about a:hover {font-weight: 600;}
+#contact {grid-area: contact;}
+#contact li {margin-bottom: 0.5rem;} #contact li:last-of-type {margin-bottom: initial;}
+#contact li:first-of-type {font-family: sans-serif; color: transparent; -webkit-text-stroke: 0.5px white; font-size: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.125rem; margin-bottom: initial;}
+#contact li:nth-of-type(2) a {font-size: 1.125rem;}
+#contact a::before {display: inline-block; content: ''; width: 1rem; aspect-ratio: 1/1; position: relative; top: 0.125rem; right: 0.5rem;}
+#contact li:nth-of-type(2) a::before {background: url('svg/icon/call.svg');}
+#contact li:nth-of-type(3) a::before {width: 1.125rem; background: url('svg/social/whatsapp.svg');}
+#contact a {color: #f0cc90;} #contact a:hover {font-weight: 600; letter-spacing: 0.0625rem;}
+#contact li:last-of-type {font-size: 1.125rem;}
 
-#contact {background: rgba(0,0,0,0.25); border-radius: 2rem; padding: 2rem; margin-top: 4rem;}
-#contact a::before {left: 1rem;}
-#contact a::after {right: 1rem; transform: rotateY(180deg);}
-#contact a::before, #contact a::after {content: ''; display: inline-block; width: 1.25rem; aspect-ratio: 1/1; float: left; position: absolute; top: 0.75rem;}
-#contact li:nth-of-type(1) a::before, #contact li:nth-of-type(1) a::after {background: url('svg/icon/call.svg');}
-#contact li:nth-of-type(2) a::before, #contact li:nth-of-type(2) a::after {background: url('svg/social/whatsapp.svg');}
-#contact li:nth-of-type(3) a::before, #contact li:nth-of-type(3) a::after {background: url('svg/social/messenger.svg');}
-#contact a:hover::before, #contact a:hover::after {filter: grayscale(100%) brightness(10%);}
-#contact h3 {display: grid; grid-template-columns: 1fr auto 1fr; grid-gap: 1rem; margin-top: 2rem; margin-bottom: 1.25rem;}
-#contact h3::before, #contact h3::after  {display: inline-block; content: ''; width: 100%; height: 0.0625rem; background: #f0f0f0; margin-top: auto; margin-bottom: auto;}
+#social {grid-area: social;}
+#social li {display: inline-block; margin-right: 1.375rem;}
+#social li a {display: inline-block; width: 1.25rem; aspect-ratio: 1/1; filter: grayscale(100%) brightness(112.5%);}
+#social li:nth-of-type(1) a {background: url('../sys/svg/social/vk.svg');}
+#social li:nth-of-type(2) a {background: url('../sys/svg/social/instagram.svg');}
+#social li:nth-of-type(3) a {background: url('../sys/svg/social/dribbble.svg');}
+#social li:last-of-type {margin-right: initial;}
+#social li:hover a {filter: initial;}
+footer > p {grid-area: copyright;}
 
-footer {margin-top: 2rem;}
-footer li {display: inline-block; margin-right: 1.5rem;}
-footer li:last-of-type {margin-right: initial;}
-footer a {display: inline-block; width: 1.125rem; aspect-ratio: 1/1; font-size: 0; filter: grayscale(100%) brightness(112.5%);}
-footer li:hover a {transform: scale(1.25); filter: initial;}
-footer li:nth-of-type(1) a {background: url('../sys/svg/social/vk.svg');}
-footer li:nth-of-type(2) a {background: url('../sys/svg/social/instagram.svg');}
-footer li:nth-of-type(3) a {background: url('../sys/svg/social/behance.svg');}
-footer li:nth-of-type(4) a {background: url('../sys/svg/social/pinterest.svg');}
-footer li:nth-of-type(5) a {background: url('../sys/svg/social/dribbble.svg');}
-footer p {margin-top: 2rem;}
+.meta {display: none;}
 
 @media (prefers-color-scheme: dark) {html {color: #f0f0f0;}}
-@media (orientation: landscape) {body {background-image: url('../index/landscape.webp');}}
-@media (orientation: landscape) and (min-width: 1280px) {body {padding-left: 32.5%; padding-right: 32.5%;}}
+@media (orientation: portrait) and (min-width: 720px) {
+	body {background-image: url('../index/fhd.webp');}
+}
+@media (orientation: landscape) and (min-width: 1280px) {
+	body {background-image: url('../index/fhd.webp');}
+	header {padding-left: 32.5%; padding-right: 32.5%;}
+	footer {grid: 'img img img' 'copyright contact social'; grid-template-columns: 1fr 1fr 1fr;}
+}
