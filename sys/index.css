@@ -1,4 +1,4 @@
-* {box-sizing: border-box; background: initial; font-style: initial; color: initial; margin: initial; padding: initial; border: initial; margin-block: initial; margin-inline: initial;}
+* {box-sizing: border-box; background: initial; font-style: initial; margin: initial; padding: initial; border: initial; margin-block: initial; margin-inline: initial;}
 
 /*init*/
 html {scroll-behavior: smooth; overflow-x: hidden; font-family: 'Jost', sans-serif; font-feature-settings: 'lnum', 'ss01', 'dlig', 'liga', 'clig', 'kern'; color: #f0f0f0; text-align: center;}
@@ -16,7 +16,7 @@ p, a, li {font-size: 1.25rem; font-weight: 300;}
 p {margin-bottom: 2rem;}
 p:last-of-type {margin-bottom: initial;}
 
-a {text-decoration: none;} a, a::before, a::after {transition: 0.5s;}
+a {text-decoration: none; color: #f0f0f0;} a, a::before, a::after {transition: 0.5s;}
 a[rel=external] {color: #f0cc90;}
 a[rel=external]:hover {font-weight: 600; letter-spacing: 0.0625rem;}
 a[rel=external]::after {display: inline-block; content: ''; width: 1rem; aspect-ratio: 1/1; background: url('svg/icon/external.svg'); position: relative; top: 0.0625rem; left: 0.5rem;}
