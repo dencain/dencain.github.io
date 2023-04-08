@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://denisslugin.uk.to/sitemaps.xml
+Sitemap: https://denisslugin.ru/sitemaps.xml
