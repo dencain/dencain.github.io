@@ -43,8 +43,9 @@ img {width: 8rem; pointer-events: none; margin-left: calc(50% - 4rem); margin-ri
 #social li a {display: inline-block; width: 1rem; aspect-ratio: 1/1; filter: grayscale(100%) brightness(112.5%);}
 #social li:nth-of-type(1) a {background: url('../sys/svg/social/vk.svg');}
 #social li:nth-of-type(2) a {background: url('../sys/svg/social/instagram.svg');}
-#social li:nth-of-type(3) a {background: url('../sys/svg/social/pinterest.svg');}
-#social li:nth-of-type(4) a {background: url('../sys/svg/social/dribbble.svg');}
+#social li:nth-of-type(3) a {background: url('../sys/svg/social/behance.svg');}
+#social li:nth-of-type(4) a {background: url('../sys/svg/social/pinterest.svg');}
+#social li:nth-of-type(5) a {background: url('../sys/svg/social/dribbble.svg');}
 #social li:last-of-type {margin-right: initial;}
 #social li:hover a {filter: initial;}
 footer > p {grid-area: copyright;}
