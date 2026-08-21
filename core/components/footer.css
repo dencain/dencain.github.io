@@ -1,0 +1,33 @@
+footer {
+	display: grid; gap: 4rem; grid: 'picture contact' 'hr hr' 'copyright social'; padding: 4rem 2rem;
+	background: #202020 url('/media/picture/line.svg') top / auto 1rem repeat-x;
+	& > picture {grid-area: picture; width: 100%; margin: auto;}
+	& > address {
+		grid-area: contact; display: grid; gap: 4rem; grid-template-columns: repeat(3, 1fr); margin: auto;
+		& p {& > * {display: block;} & strong {font-size: 2.25rem; margin-bottom: 1rem;} & a:not(& a:last-of-type) {margin-bottom: 0.5lh;}}
+	}
+	& > hr {grid-area: hr;}
+	& > ul {
+		grid-area: social; height: 1.5rem; text-align: right; margin-top: auto; margin-bottom: auto;
+		& li {
+			display: inline-block; margin-right: 1.5rem;
+			& a {display: block; width: 1.5rem; aspect-ratio: 1/1; filter: grayscale(100%) brightness(112.5%); transition: ease-in 0.25s;}
+			& [title='VK'] {background: url('/media/social/vk.svg');}
+			& [title='Instagram'] {background: url('/media/social/instagram.svg');}
+			& [title='Behance'] {background: url('/media/social/behance.svg');}
+			& [title='Pinterest'] {background: url('/media/social/pinterest.svg');}
+			& [title='Dribbble'] {background: url('/media/social/dribbble.svg');}
+			&:hover a {filter: initial; transform: scale(1.5) rotate(15deg);}
+			&:last-of-type {margin-right: initial;}
+		}
+	}
+	& > p {grid-area: copyright;}
+}
+@media (orientation: portrait) {
+    footer {
+        grid: 'contact' 'hr' 'picture' 'social' 'copyright';
+		& > picture {width: 75%;}
+        & > * {margin: auto;}
+        & address {width: 100%; gap: 1rem; grid-template-columns: 1fr;}
+    }
+}

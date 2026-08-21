@@ -1,0 +1,31 @@
+#how_we_do {
+	text-align: center; padding: 4rem 2rem;
+	& > h2 {border-bottom: 0.125rem solid #f0c090; padding-bottom: 1rem; margin-bottom: 2rem; transform-origin: bottom;}
+	& > ul {
+		display: grid; gap: 4rem 2rem; grid-template-columns: repeat(4, 1fr);
+		& > li {
+			& > h3 {font-size: 2rem;}
+			&.aos {
+				transform: scale(0.5); transform-origin: bottom;
+				&.active {transform: scale(1);}
+				&:nth-of-type(2), &:nth-of-type(6) {transition-delay: 0.125s;}
+				&:nth-of-type(3), &:nth-of-type(7) {transition-delay: 0.25s;}
+				&:nth-of-type(4), &:nth-of-type(8) {transition-delay: 0.375s;}
+			}
+			&::before {display: inline-block; content: ''; width: 6rem; aspect-ratio: 1/1; background-repeat: no-repeat !important; margin-bottom: 0.75rem;}
+			&:nth-of-type(1)::before {background: url('/media/icon/how_we_do/mk1.svg');}
+			&:nth-of-type(2)::before {background: url('/media/icon/how_we_do/mk2.svg');}
+			&:nth-of-type(3)::before {background: url('/media/icon/how_we_do/mk3.svg');}
+			&:nth-of-type(4)::before {background: url('/media/icon/how_we_do/mk4.svg');}
+			&:nth-of-type(5)::before {background: url('/media/icon/how_we_do/mk5.svg');}
+			&:nth-of-type(6)::before {background: url('/media/icon/how_we_do/mk6.svg');}
+			&:nth-of-type(7)::before {background: url('/media/icon/how_we_do/mk7.svg');}
+			&:nth-of-type(8)::before {background: url('/media/icon/how_we_do/mk8.svg');}
+		}
+	}
+	& > p:first-of-type {margin-bottom: 4rem;}
+	& > p:last-of-type {margin-top: 4rem;}
+}
+@media (orientation: portrait) {
+	#how_we_do > ul {grid-template-columns: 1fr; & > li.aos {transition-delay: initial !important;}}
+}

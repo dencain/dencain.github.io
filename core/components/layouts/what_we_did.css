@@ -1,0 +1,41 @@
+#projects {
+	background: #f0f0f0; color: #202020; padding: 4rem 0%;
+	& > h2 {border-bottom: 0.125rem solid #f0c090; margin: 0% 2rem;}
+	& > div {display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; max-height: 100vh; overflow: hidden;}
+	& figure {
+		position: relative;
+		& > img {display: block; width: 100%; height: 100%; object-fit: cover;}
+		& > figcaption {
+			position: absolute; bottom: 0%; left: 0%; width: 100%; height: 0%; overflow: hidden; background: rgba(32, 32, 32, 0.875); color: #f0f0f0; transition: 0.5s;
+			padding: 0% 2rem; text-align: left; text-transform: uppercase; font-variation-settings: 'wght' 600; font-size: 1.25rem;
+			& b {display: block; color: #f0c090; font-variation-settings: 'wght' 800; font-size: 1.75rem;}
+			&.aos {transition: 0.25s;}
+			&.active {height: initial; padding: 2rem;}
+		}
+		&:nth-of-type(28) {margin: auto;}
+	}
+	& > span {display: block; text-transform: uppercase; font-size: 1.25rem; font-variation-settings: 'wght' 600; margin-top: 4rem; cursor: pointer; text-align: center;}
+}
+#customers {
+	background: #f0f0f0; color: #202020; padding: 4rem 2rem; text-align: center; overflow-x: hidden;
+	& > h2 {transform-origin: bottom;}
+	& > div {
+		display: flex; gap: 4rem; width: max-content; animation: ticker 30s linear infinite; height: 4rem; margin-top: 4rem;
+		& > img {object-fit: contain; user-select: none; filter: grayscale(100%) brightness(50%);}
+		&:hover {animation-play-state: paused;}
+	}
+}
+@keyframes ticker {0% {transform: translateX(0%);} 100% {transform: translateX(-50%);}}
+@media (orientation: landscape) {
+	#projects {
+		position: relative;
+		& > p {text-align: right; position: absolute; top: 9rem; right: 2rem; text-transform: uppercase;}
+	}
+}
+@media (orientation: portrait) {
+	#projects {
+		text-align: center;
+		& > h2 {padding-bottom: 1rem; margin-bottom: 2rem; transform-origin: bottom;}
+		& > div {grid-template-columns: 1fr;}
+	}
+}

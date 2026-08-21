@@ -1,0 +1,77 @@
+#what_we_do {
+	padding: 4rem 25%;
+	& > h2 {border-bottom: 0.125rem solid #f0c090; padding-bottom: 1rem; margin-bottom: 2rem;}
+	& > img {margin: 2rem 0%;}
+	& > p:last-of-type {margin-top: 2rem;}
+}
+main [href="#contact"] {
+	display: inline-block; background: #f0c090; color: #202020; padding: 1rem 2rem; border-radius: 2rem; text-transform: uppercase; font-size: 1.25rem; font-variation-settings: 'wght' 600; margin-top: 2rem;
+	&:hover {background: transparent; color: #f0c090; outline: 0.0625rem solid #f0c090;}
+}
+
+#service, #product {
+	display: grid; gap: 2rem; padding: 4rem 2rem;
+	& h3 {position: sticky; top: 50%; transform: rotate(-90deg); margin-top: 6rem; margin-bottom: auto; color: #f0c090; overflow-wrap: initial;}
+}
+#service {
+	grid-template-columns: 6rem auto;
+	& li {
+		display: grid; gap: 2rem; grid-template-columns: repeat(2, 1fr); align-items: center; position: relative;
+		&::before {position: absolute; top: 1.5rem; left: -1.5rem; content: '01'; color: #f0c090;}
+		&:nth-of-type(2)::before {content: '02';}
+		&:nth-of-type(3)::before {content: '03';}
+		&:nth-of-type(4)::before {content: '04';}
+		&:nth-of-type(5)::before {content: '05';}
+		& > p {text-align: left;}
+	}
+}
+#product {
+	grid: 'h p img_1' 'h ul img_1' 'h img_2 img_2'; grid-template-columns: 6rem 1fr 1fr;
+	& h3 {grid-area: h; margin-top: 10rem;}
+	& p {grid-area: p;}
+	& ul {
+		display: grid; gap: 4rem 2rem; grid-template-columns: repeat(3, 1fr); grid-area: ul; text-align: center;
+		& strong, & span {display: block; text-transform: uppercase;}
+		& strong {font-size: 2.25rem;}
+		& span {color: #f0c090;}
+		& > li {
+			position: relative;
+			&::before {display: inline-block; content: ''; width: 8rem; aspect-ratio: 1/1; background: #f0c090; border-radius: 50%;}
+			&::after {position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); display: inline-block; content: ''; width: 5rem; aspect-ratio: 1/1; margin-bottom: 0.75rem; filter: invert(1) opacity(0.925);}
+			&:nth-of-type(1)::after {background: url('/media/icon/star.svg') no-repeat; top: 1.375rem;}
+			&:nth-of-type(2)::after {background: url('/media/icon/crown.svg') no-repeat;}
+			&:nth-of-type(3)::after {background: url('/media/icon/fleur_de_lis.svg') center/cover no-repeat;}
+		}
+	}
+	& > img {width: 100%; &:first-of-type {grid-area: img_1;} &:last-of-type {grid-area: img_2;}}
+}
+#delivery {padding: 4rem 25%; text-align: center;}
+@media (orientation: landscape) {
+	#service {& h4 {font-size: 8rem;}}
+}
+@media (orientation: portrait) {
+	#what_we_do, #delivery {padding: 4rem 2rem;}
+	#what_we_do {
+		& > img {all: revert; position: relative; left: -2rem; width: calc(100% + 4rem);}
+		& > ul {grid-template-columns: 1fr;}
+	}
+	#service, #product {
+		grid-template-columns: 1fr;
+		& h3 {position: initial; top: initial; transform: initial; margin-top: initial; margin-bottom: initial;}
+	}
+	#service {
+		&, & li {grid-template-columns: 1fr; gap: initial;}
+		& li:not(& li:last-of-type) {margin-bottom: 2rem;}
+		& li::before {top: 0.75rem;}
+		& li strong {font-size: 4.5rem;}
+	}
+	#product {
+		grid: 'h' 'img_1' 'p' 'ul' 'img_2';
+		& li {
+			& > strong {font-size: 1.75rem;}
+			& > span {font-size: 1.25rem;}
+			&::before {width: 4rem !important;}
+			&::after {width: 2rem !important; top: 1rem !important;}
+		}
+	}
+}

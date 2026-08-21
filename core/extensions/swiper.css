@@ -1,0 +1,9 @@
+.swiper {overflow: hidden; position: relative; width: 100%; user-select: none;}
+.swiper-track {display: flex; transition: transform 0.3s ease-out; cursor: grab;}
+.swiper-track:active {cursor: grabbing;}
+.slide {min-width: 100%; box-sizing: border-box;}
+
+.swiper-controls {display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0%; left: 0%; width: 100%; padding: 1rem;}
+.swiper-dots {display: flex; gap: 1rem;}
+.slider-dot {width: 0.5rem; aspect-ratio: 1/1; transform: rotate(45deg); background: #f0f0f0; cursor: pointer;}
+.slider-dot.active {background: #f0c090;}
