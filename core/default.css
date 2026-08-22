@@ -26,7 +26,7 @@
 
 /*Global*/
 html, body {overflow-x: clip;}
-html {scroll-behavior: smooth; font-family: 'default', sans-serif;}
+html {font-family: 'default', sans-serif; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;}
 body {background: #202020; color: #f0f0f0;}
 
 section:has(#what_we_do) {background: #202020;}
@@ -48,7 +48,7 @@ mark {display: inline-block; height: 1.75rem; background: linear-gradient(0deg, 
 
 audio {display: none;}
 
-hr {background: #f0c090; width: 100%; height: 0.0625rem;}
+hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
 
 /*Custom*/
 .meta {display: none;}
@@ -66,7 +66,7 @@ hr {background: #f0c090; width: 100%; height: 0.0625rem;}
 }
 
 #top {
-	display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; padding: 4rem 25%; overflow: clip;
+	display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100lvh; padding: 4rem 25%; overflow: clip;
 	& > img:first-of-type {width: 100%;}
 	& > h1 {margin-top: 4rem;}
 	& > a[href="#about"] {
