@@ -25,10 +25,9 @@
 @font-face {font-family: 'default'; src: url('/core/default.ttf'); font-variation-settings: 'wght' 400;}
 
 /*Global*/
-html, body {background: transparent; overflow-x: clip;}
-html {font-family: 'default', sans-serif; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;}
-body {color: #f0f0f0;}
-
+html {font-family: 'default', sans-serif; scroll-behavior: smooth;}
+body {background: #202020; color: #f0f0f0;}
+main {overflow-x: clip;}
 section:has(#what_we_do) {background: #202020;}
 
 h1, h2, h3, h4 {font-variation-settings: 'wght' 800; text-transform: uppercase;}
@@ -66,7 +65,7 @@ hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
 }
 
 #top {
-	display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100lvh; padding: 4rem 25%; overflow: clip;
+	display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100dvh; padding: 4rem 25%; overflow: clip;
 	& > img:first-of-type {width: 100%;}
 	& > h1 {margin-top: 4rem;}
 	& > a[href="#about"] {
@@ -76,10 +75,10 @@ hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
 		}
 	}
 	& > .swiper {
-		position: absolute; top: 0%; left: 0%; z-index: -1; width: 100%; height: 100%;
+		position: absolute; top: 0%; left: 0%; z-index: -1; width: 100%; height: inherit;
 		& > .swiper-track {
-			height: 100%;
-			& img {width: 100%; height: 100%; object-fit: cover;}
+			height: inherit;
+			& img {width: 100%; height: inherit; object-fit: cover;}
 		}
 	}
 }
@@ -111,6 +110,7 @@ h2.aos {transform: scale(0.5); transform-origin: left bottom; &.active {transfor
 #about > img.aos {transform: rotateX(67.5deg); transform-origin: bottom; &.active {transform: rotateX(0deg);}}
 
 /*Rule*/
+@media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}
 @media (orientation: landscape) {
 	h1 {font-size: 2.25rem;}
 	h2 {font-size: 6rem;}

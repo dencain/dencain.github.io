@@ -101,6 +101,7 @@ const ticker = document.querySelector('#customers > div'); if (ticker) {ticker.i
 //@media (orientation: landscape) and (min-width: 80rem) {}
 //@media (orientation: portrait) {}
 //all: revert;
+//padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
 //₽μm®™/m² =A2/453.592*500 =C2*0.0000393700787*1000
 
 //DOM Ready
