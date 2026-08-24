@@ -38,16 +38,29 @@ if (window.matchMedia('(orientation: landscape)').matches) {
   import('/core/extensions/cursor.js');
   import('/core/extensions/ash.js');
   import('/core/extensions/boil.js');
+
+  function imports() {
+    $('.cursor').css('z-index', '7');
+    $('.ash').css('z-index', '1');
+    $('.boil').css('z-index', '2');
+    
+    $('header').css('z-index', '3');
+    $('#nav').css('z-index', '4');
+    $('#progress').css('z-index', '5');
+    $('#load').css('z-index', '6');
+  }
+  
+  window.addEventListener('load', function() {imports();});
 }
 
 $('head').append('<style></style>');
 $('hr, h2, #how_we_do li, #about > img, #projects figcaption').addClass('aos');
 
 //Nav
-function nav_in() {$('.nav, header').addClass('active'); $('.nav').attr('onclick', 'nav_out()');}
-function nav_out() {$('.nav, header').removeClass('active'); $('.nav').attr('onclick', 'nav_in()');}
+function nav_in() {$('#nav, header').addClass('active'); $('#nav').attr('onclick', 'nav_out()');}
+function nav_out() {$('#nav, header').removeClass('active'); $('#nav').attr('onclick', 'nav_in()');}
 $('header a').on('click', nav_out);
-if (window.matchMedia('(orientation: portrait)').matches) {$('body').append('<div class="nav" title="Навигация" onclick="nav_in()"></div>');}
+if (window.matchMedia('(orientation: portrait)').matches) {$('body').append('<div id="nav" title="Навигация" onclick="nav_in()"></div>');}
 
 let lastScrollY = window.scrollY;
 let ticking = false;
@@ -55,8 +68,8 @@ window.addEventListener('scroll', () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {$('header:not(header.active), .nav:not(.nav.active)').addClass('hide');}
-      else {$('header:not(header.active), .nav:not(.nav.active)').removeClass('hide');}
+      if (currentScrollY > lastScrollY) {$('header:not(header.active), #nav:not(#nav.active)').addClass('hide');}
+      else {$('header:not(header.active), #nav:not(#nav.active)').removeClass('hide');}
       lastScrollY = currentScrollY;
       ticking = false;
     });
@@ -73,9 +86,8 @@ window.addEventListener('scroll', () => {
 function radio() {const audio = document.querySelector('audio'); if (audio.paused) {audio.play();} else {audio.pause();}}
 
 //Page Progress
-window.addEventListener('scroll', () => {$('#progress > div').css('width', ((window.scrollY || document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100 + '%');});
-$('style').append('#progress {position: fixed; top: 0%; left: 0%; width: 100%; height: 0.25rem; background: transparent; z-index: 100; & > div {width: 0%; height: 100%; background: #f0c090; transition: 0.1s;}}');
-$('body').append('<div id="progress"><div></div></div>');
+window.addEventListener('scroll', () => {$('#progress').css('width', ((window.scrollY || document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100 + '%');});
+$('body').append('<div id="progress"></div>');
 
 //What We Did
 function projects() {$('#projects div').css('max-height', 'initial'); $('#projects span').remove();}
@@ -101,6 +113,7 @@ const ticker = document.querySelector('#customers > div'); if (ticker) {ticker.i
 //@media (orientation: landscape) and (min-width: 80rem) {}
 //@media (orientation: portrait) {}
 //all: revert;
+//@import url('/core/components/layouts/what_we_did.css') layer(components);
 //padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
 //₽μm®™/m² =A2/453.592*500 =C2*0.0000393700787*1000
 

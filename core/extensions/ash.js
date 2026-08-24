@@ -9,7 +9,7 @@ const AshTranslateYt = ['-101vh', '-102vh', '-103vh', '-104vh', '-105vh', '-106v
 const AshScale = ['1.5s', '1.75s', '2s', '2.25s', '2.5s', '2.75s', '3s'];
 const AshScaleDuration = ['7s', '7.5s', '8s', '8.5s', '9s', '9.5s', '10s', '10.5s', '11s', '11.5s', '12s', '12.5s'];
 
-$('style').append('.ash {position: fixed; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; overflow: hidden; pointer-events: none; & > div {position: absolute; transform: translate(-10vw); & > div {width: 100%; height: 100%; border-radius: 50%; background-image: radial-gradient(rgba(255, 255, 0, 1) 10%, rgba(255, 0, 0, 1) 10%, transparent 37.5%);}} & div {animation-iteration-count: infinite !important; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2) !important; will-change: transform;} @keyframes AshScale {0% {transform: scale(1);} 50% {transform: scale(0.5);} 100% {transform: scale(1);}}}');
+$('style').append('.ash {position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; & > div {position: absolute; transform: translate(-10vw); & > div {width: 100%; height: 100%; border-radius: 50%; background-image: radial-gradient(rgba(255, 255, 0, 1) 10%, rgba(255, 0, 0, 1) 10%, transparent 37.5%);}} & div {animation-iteration-count: infinite !important; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1.2) !important; will-change: transform;} @keyframes AshScale {0% {transform: scale(1);} 50% {transform: scale(0.5);} 100% {transform: scale(1);}}}');
 $('body').append('<div class="ash"></div>');
 
 let Ashes = 150;

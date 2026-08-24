@@ -31,9 +31,9 @@ main [href="#contact"] {
 	& p {grid-area: p;}
 	& ul {
 		display: grid; gap: 4rem 2rem; grid-template-columns: repeat(3, 1fr); grid-area: ul; text-align: center;
-		& strong, & span {display: block; text-transform: uppercase;}
+		& strong, & span {display: block;}
 		& strong {font-size: 2.25rem;}
-		& span {color: #f0c090;}
+		& span {color: #f0c090; text-transform: uppercase;}
 		& > li {
 			position: relative;
 			&::before {display: inline-block; content: ''; width: 8rem; aspect-ratio: 1/1; background: #f0c090; border-radius: 50%;}

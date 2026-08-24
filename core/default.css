@@ -1,9 +1,10 @@
+@layer reset, init;
+
 @import url('/core/components/header.css');
 @import url('/core/components/footer.css');
 @import url('/core/components/layouts/what_we_do.css');
 @import url('/core/components/layouts/how_we_do.css');
 @import url('/core/components/layouts/what_we_did.css');
-
 @import url('/core/extensions/swiper.css');
 
 @layer reset {
@@ -21,11 +22,16 @@
 
 	img, picture, video, canvas, svg {display: block; max-width: 100%; height: auto;}
 }
+@layer init {
+	ol, ul {list-style-type: none;}
+	dfn, strong, address {font-style: initial;}
+	hr {all: initial;}
+}
 
 @font-face {font-family: 'default'; src: url('/core/default.ttf'); font-variation-settings: 'wght' 400;}
 
 /*Global*/
-html {font-family: 'default', sans-serif; scroll-behavior: smooth;}
+html {font-family: 'default', sans-serif; line-height: 1.125; scroll-behavior: smooth;}
 body {background: #202020; color: #f0f0f0;}
 main {overflow-x: clip;}
 section:has(#what_we_do) {background: #202020;}
@@ -39,21 +45,19 @@ p, li, a, span, figcaption {font-size: 1.5rem;}
 p:not(p:last-of-type) {margin-bottom: 2rem;}
 a {text-decoration: none; color: #f0f0f0; font-variation-settings: 'wght' 400; &, &::before, &::after {transition: 0.5s;} &:hover {color: #f0c090;}}
 
-strong {font-style: initial; font-variation-settings: 'wght' 800; text-transform: uppercase;}
-address {font-style: initial;}
+strong {font-variation-settings: 'wght' 800; text-transform: uppercase;}
 
-ul {list-style-type: none;}
 mark {display: inline-block; height: 1.75rem; background: linear-gradient(0deg, #f0c090 0.125rem, transparent 0.125rem); color: #f0f0f0;}
 
 audio {display: none;}
 
-hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
+hr {background: #f0c090; width: 100%; height: 0.0625rem;}
 
 /*Custom*/
 .meta {display: none;}
 
 #load {
-	position: fixed; top: 0%; left: 0%; z-index: 10; width: 100%; height: 100%; background: #202020 url('/media/brand/ru/logo_animated.svg') no-repeat center 25% / 50%; text-align: center;
+	position: fixed; top: 0%; left: 0%; z-index: 4; width: 100%; height: 100%; background: #202020 url('/media/brand/ru/logo_animated.svg') no-repeat center 25% / 50%; text-align: center;
 	& > span {
 		position: absolute; transform: translateX(-50%);
 		&:first-of-type {bottom: 37.5%; font-size: 2rem; font-variation-settings: 'wght' 800; letter-spacing: 1ch; text-transform: uppercase;}
@@ -64,8 +68,10 @@ hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
 	}
 }
 
+#progress {position: fixed; top: 0%; left: 0%; z-index: 3; width: 0%; height: 0.25rem; background: #f0c090; transition: 0.01s;}
+
 #top {
-	display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100dvh; padding: 4rem 25%; overflow: clip;
+	display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 4rem 25%; overflow: clip;
 	& > img:first-of-type {width: 100%;}
 	& > h1 {margin-top: 4rem;}
 	& > a[href="#about"] {
@@ -75,10 +81,10 @@ hr {all: initial; background: #f0c090; width: 100%; height: 0.0625rem;}
 		}
 	}
 	& > .swiper {
-		position: absolute; top: 0%; left: 0%; z-index: -1; width: 100%; height: inherit;
+		position: absolute; top: 0%; left: 0%; z-index: -1; width: 100%; height: 100%;
 		& > .swiper-track {
-			height: inherit;
-			& img {width: 100%; height: inherit; object-fit: cover;}
+			height: 100%;
+			& img {width: 100%; height: 100%; object-fit: cover;}
 		}
 	}
 }

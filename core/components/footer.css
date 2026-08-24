@@ -1,6 +1,6 @@
 footer {
 	display: grid; gap: 4rem; grid: 'picture contact' 'hr hr' 'copyright social'; padding: 4rem 2rem;
-	background: #202020 url('/media/picture/line.svg') top / auto 1rem repeat-x;
+	background: #202020 url('/media/picture/line.svg') top left / auto 1rem repeat-x;
 	& > picture {grid-area: picture; width: 100%; margin: auto;}
 	& > address {
 		grid-area: contact; display: grid; gap: 4rem; grid-template-columns: repeat(3, 1fr); margin: auto;

@@ -27,10 +27,7 @@
 }
 @keyframes ticker {0% {transform: translateX(0%);} 100% {transform: translateX(-50%);}}
 @media (orientation: landscape) {
-	#projects {
-		position: relative;
-		& > p {text-align: right; position: absolute; top: 9rem; right: 2rem; text-transform: uppercase;}
-	}
+	#projects {position: relative; & > p {text-align: right; position: absolute; top: 8rem; right: 2rem; text-transform: uppercase;}}
 }
 @media (orientation: portrait) {
 	#projects {
