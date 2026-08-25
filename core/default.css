@@ -80,12 +80,10 @@ hr {background: #f0c090; width: 100%; height: 0.0625rem;}
 			content: ''; width: 1.5rem; aspect-ratio: 1/1; background: url('/media/icon/stat_3.svg') center no-repeat; position: absolute; left: 50%; transform: translateX(-50%) rotate(180deg); margin-top: 2.25rem;
 		}
 	}
-	& > .swiper {
-		position: absolute; top: 0%; left: 0%; z-index: -1; width: 100%; height: 100%;
-		& > .swiper-track {
-			height: 100%;
-			& img {width: 100%; height: 100%; object-fit: cover;}
-		}
+	.modern-swiper {
+		position: absolute; left: 0%; right: 0%; z-index: -1; width: 100%; height: 100%;
+		.swiper-track {height: 100%;}
+		.swiper-slide > img {width: 100dvw; min-height: 100dvh; object-fit: cover;}
 	}
 }
 

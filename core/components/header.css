@@ -1,7 +1,6 @@
 header {
-	position: fixed; left: 0%; z-index: 1; width: 100%; background: rgba(32, 32, 32, 0.75); backdrop-filter: blur(0.5rem) brightness(75%); transition: 0.25s;
+	position: fixed; left: 0%; z-index: 1; width: 100%; padding: 1rem 2rem; background: rgba(32, 32, 32, 0.75); backdrop-filter: blur(0.5rem) brightness(75%); will-change: transform; transition: 0.25s;
 	& > a {
-		height: 4rem;
 		& > img {height: 100%;}
 		&:last-of-type {
 			background: #f0c090; color: #202020; justify-self: end; align-self: center; height: auto; padding: 0.75rem 1.5rem; border-radius: 2rem;font-size: 1.25rem; font-variation-settings: 'wght' 600; text-transform: uppercase; outline: 0.0625rem solid transparent;
@@ -9,35 +8,11 @@ header {
 		}
 	}
 }
-#nav {
-	position: fixed; bottom: 1.75rem; right: 2rem; z-index: 2;
-	width: 1.5rem; aspect-ratio: 1/1; background: url('/media/icon/dashboard.svg') center no-repeat; cursor: pointer; will-change: transform; transition: transform 0.5s;
-	&.active {background: url('/media/icon/close.svg') center no-repeat; transform: rotate(360deg);}
-	&.hide {transform: translateY(4rem);}
-}
-@media (orientation: landscape) {
-	header {
-		display: grid; grid-template-columns: 1fr 3fr 1fr; gap: 4rem; top: 0%; height: 6rem; padding: 1rem;
-		& > nav {
-			margin: auto 0%; text-align: center; text-transform: uppercase;
-			& > ul {
-				& > li {
-					display: inline-block;
-					&:not(&:last-of-type) {margin-right: 2rem;}
-					& > a {&:hover {font-variation-settings: 'wght' 800;}}
-				}
-			}
-		}
-		&.hide {transform: translateY(-6rem);}
-	}
-}
 @media (orientation: portrait) {
 	header {
-		bottom: calc(-100% + 5rem); display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 1.5rem 2rem;
-		&.hide {transform: translateY(5rem);}
-		& > a {
-			&:first-of-type {position: absolute; top: 1rem; left: 1rem; height: 3rem;}
-		}
+		bottom: calc(-100% + 4rem); display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;
+		&.hide {transform: translateY(4rem);}
+		& > a {&:first-of-type {position: absolute; top: 1rem; left: 2rem; height: 2rem;}}
 		& > nav {
 			margin: auto 0%; text-align: center; text-transform: uppercase;
 			& > ul {
@@ -50,5 +25,28 @@ header {
 			}
 		}
 		&.active {bottom: 0%;}
+	}
+	#nav {
+		position: fixed; bottom: 1rem; right: 2rem; z-index: 2;
+		width: 1.5rem; aspect-ratio: 1/1; background: url('/media/icon/dashboard.svg') center no-repeat; cursor: pointer; will-change: transform; transition: transform 0.5s;
+		&.active {background: url('/media/icon/close.svg') center no-repeat; transform: rotate(360deg);}
+		&.hide {transform: translateY(5rem);}
+	}
+}
+@media (orientation: landscape) {
+	header {
+		top: 0%; display: grid; grid-template-columns: 1fr 3fr 1fr; gap: 4rem; height: 6rem;
+		&.hide {transform: translateY(-6rem);}
+		& > a {height: 4rem;}
+		& > nav {
+			margin: auto 0%; text-align: center; text-transform: uppercase;
+			& > ul {
+				& > li {
+					display: inline-block;
+					&:not(&:last-of-type) {margin-right: 2rem;}
+					& > a {&:hover {font-variation-settings: 'wght' 800;}}
+				}
+			}
+		}
 	}
 }

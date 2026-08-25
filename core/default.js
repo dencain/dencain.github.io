@@ -33,6 +33,7 @@ $('#load > span:last-of-type').on('click', load);
 //init
 import('/core/extensions/aos.js');
 import('/core/extensions/swiper.js');
+import('/core/extensions/ticker.js');
 
 if (window.matchMedia('(orientation: landscape)').matches) {
   import('/core/extensions/cursor.js');
@@ -116,6 +117,7 @@ const ticker = document.querySelector('#customers > div'); if (ticker) {ticker.i
 //@import url('/core/components/layouts/what_we_did.css') layer(components);
 //padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
 //₽μm®™/m² =A2/453.592*500 =C2*0.0000393700787*1000
+//←❮❯→
 
 //DOM Ready
 document.addEventListener('DOMContentLoaded', function() {});

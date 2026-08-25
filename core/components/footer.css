@@ -1,10 +1,14 @@
 footer {
-	display: grid; gap: 4rem; grid: 'picture contact' 'hr hr' 'copyright social'; padding: 4rem 2rem;
+	display: grid; gap: 4rem; padding: 4rem 2rem;
 	background: #202020 url('/media/picture/line.svg') top left / auto 1rem repeat-x;
-	& > picture {grid-area: picture; width: 100%; margin: auto;}
+	& > picture {grid-area: picture; margin: auto;}
 	& > address {
-		grid-area: contact; display: grid; gap: 4rem; grid-template-columns: repeat(3, 1fr); margin: auto;
-		& p {& > * {display: block;} & strong {font-size: 2.25rem; margin-bottom: 1rem;} & a:not(& a:last-of-type) {margin-bottom: 0.5lh;}}
+		grid-area: contact; display: grid; margin: auto;
+		& p {
+			& > * {display: block;}
+			& strong {font-size: 2.25rem; margin-bottom: 1rem;}
+			& a:not(& a:last-of-type) {margin-bottom: 0.5lh;}
+		}
 	}
 	& > hr {grid-area: hr;}
 	& > ul {
@@ -26,8 +30,15 @@ footer {
 @media (orientation: portrait) {
     footer {
         grid: 'contact' 'hr' 'picture' 'social' 'copyright';
-		& > picture {width: 75%;}
         & > * {margin: auto;}
-        & address {width: 100%; gap: 1rem; grid-template-columns: 1fr;}
+		& > picture {width: 75%;}
+        & > address {width: 100%; gap: 1rem; grid-template-columns: 1fr;}
+    }
+}
+@media (orientation: landscape) {
+	footer {
+        grid: 'picture contact' 'hr hr' 'copyright social';
+		& > picture {width: 100%;}
+		& > address {gap: 4rem; grid-template-columns: repeat(3, 1fr);}
     }
 }

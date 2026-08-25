@@ -1,108 +1,63 @@
-:root {
-  --slider-width: 100%;
-  --slider-height: 400px;
+.modern-swiper {position: relative; width: 100%; min-width: 50%; margin: 0 auto; overflow: hidden;}
+
+/* Hardware-accelerated native track physics */
+.swiper-track {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  
+  /* Hides scrollbar in Firefox */
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
 }
 
-.slider-container {
-  position: relative;
-  width: var(--slider-width);
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: system-ui, sans-serif;
-  overflow: hidden;
-  border-radius: 12px;
-}
+/* Hides scrollbar in Chrome/Safari/Edge */
+.swiper-track::-webkit-scrollbar {display: none;}
 
-/* The magic touch element */
-.slider-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* Smooth iOS momentum */
-  scrollbar-width: none; /* Hide default scrollbar Firefox */
-}
+.swiper-slide {flex: 0 0 100%; width: 100%; min-height: 50%; scroll-snap-align: start; scroll-snap-stop: always; display: grid; place-content: center;}
 
-.slider-track::-webkit-scrollbar {
-  display: none; /* Hide default scrollbar Chrome/Safari */
-}
-
-.slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: var(--slider-height);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-/* UI Overlays */
-.slider-info {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 8px 12px;
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-  color: white;
-}
-
-.slider-counter {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
-
-.slider-pagination {
-  display: flex;
-  gap: 6px;
-}
-
-.slider-pagination > .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.slider-pagination > .dot.active {
-  background: #ffffff;
-  transform: scale(1.2);
-}
-
-/* Modern Glassmorphic Arrows */
-.slider-arrow {
+/* Optional UI Elements Stylings */
+.swiper-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0,0,0,0.5);
   color: white;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  border: none;
+  padding: 1rem;
   cursor: pointer;
-  font-size: 1.25rem;
-  display: grid;
-  place-items: center;
-  transition: background 0.2s;
   z-index: 10;
 }
+.prev {left: 1rem;}
+.next {right: 1rem;}
 
-.slider-arrow:hover {
-  background: rgba(255, 255, 255, 0.4);
+.swiper-pagination {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
 }
 
-.prev { left: 16px; }
-.next { right: 16px; }
+.swiper-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.swiper-dot.active {background: white; transform: scale(1.2);}
+
+.swiper-counter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(32, 32, 32, 0.75);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  display: grid; grid-template-columns: auto auto auto; gap: 0.5rem;
+  & > * {margin-top: auto; margin-bottom: auto;}
+  & > div {background: white; width: 2rem; height: 0.1rem;}
+}

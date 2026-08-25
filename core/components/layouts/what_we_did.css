@@ -17,15 +17,10 @@
 	& > span {display: block; text-transform: uppercase; font-size: 1.25rem; font-variation-settings: 'wght' 600; margin-top: 4rem; cursor: pointer; text-align: center;}
 }
 #customers {
-	background: #f0f0f0; color: #202020; padding: 4rem 2rem; text-align: center; overflow-x: hidden;
-	& > h2 {transform-origin: bottom;}
-	& > div {
-		display: flex; gap: 4rem; width: max-content; animation: ticker 30s linear infinite; height: 4rem; margin-top: 4rem;
-		& > img {object-fit: contain; user-select: none; filter: grayscale(100%) brightness(50%);}
-		&:hover {animation-play-state: paused;}
-	}
+	background: #f0f0f0; color: #202020; padding-top: 4rem; padding-bottom: 4rem; text-align: center; overflow-x: hidden;
+	& > h2 {transform-origin: bottom; padding-left: 2rem; padding-right: 2rem;}
 }
-@keyframes ticker {0% {transform: translateX(0%);} 100% {transform: translateX(-50%);}}
+
 @media (orientation: landscape) {
 	#projects {position: relative; & > p {text-align: right; position: absolute; top: 8rem; right: 2rem; text-transform: uppercase;}}
 }
